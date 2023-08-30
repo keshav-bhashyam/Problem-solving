@@ -7,20 +7,13 @@ class Solution {
         StringBuilder sb = new StringBuilder();
 
         while (s1Counter < word1.length() && s2Counter < word2.length()) {
-            if (order) {
-                sb.append(word1.charAt(s1Counter));
-                s1Counter++;
-                order = false;
-            } else {
-                sb.append(word2.charAt(s2Counter));
-                s2Counter++;
-                order = true;
-            }
+            sb.append(word1.charAt(s1Counter++));
+            sb.append(word2.charAt(s2Counter++));
         }
 
         if (s1Counter < word1.length()) sb.append(word1.substring(s1Counter));
         if (s2Counter < word2.length()) sb.append(word2.substring(s2Counter));
 
-        return sb.toString();   
+        return sb.toString();
     }
 }
