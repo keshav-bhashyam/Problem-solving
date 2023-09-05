@@ -12,6 +12,8 @@ class Solution {
 
                 if (numberOfZeroes <= 1) {
                     maxOnes = Math.max(maxOnes, j - i + 1);
+                } else {
+                    break;
                 }
             }
         }
