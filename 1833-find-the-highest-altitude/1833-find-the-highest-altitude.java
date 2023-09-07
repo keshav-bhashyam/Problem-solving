@@ -10,8 +10,6 @@ class Solution {
             maxGain = Math.max(maxGain, netGain[i]);
         }
 
-        // System.out.println(Arrays.toString(netGain));
-
         return maxGain;
     }
 }
