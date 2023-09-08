@@ -3,6 +3,8 @@ class Solution {
         int l = 0, r = 0, n = s.length(), longestRun = 0;
         Map<Character, Integer> counter = new HashMap<>();
 
+        if (n < 3) return n;
+
         while ( r < n ) {
             counter.put(s.charAt(r), counter.getOrDefault(s.charAt(r), 0) + 1);
 
