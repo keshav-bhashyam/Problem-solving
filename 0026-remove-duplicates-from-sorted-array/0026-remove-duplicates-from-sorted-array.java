@@ -1,18 +1,16 @@
 class Solution {
-    private static int EMPTY_VAL = -200;
+    
     public int removeDuplicates(int[] nums) {
-        int l = 1, r = nums.length, k = nums.length;
+        Map<Integer, Integer> counter = new LinkedHashMap<>();
+        int k = 0, n = nums.length;
 
-        while (l < r) {
-            if (nums[l] == nums[l - 1] && nums[l] != EMPTY_VAL) {
-                for (int i = l; i < r - 1; i++) {
-                    nums[i] = nums[i + 1];
-                }
-                nums[--k] = EMPTY_VAL;
-            } else {
-                l++;
-            }
+        for (int i = 0; i < n; i++) {
+            counter.put(nums[i], counter.getOrDefault(nums[i], 0) + 1);
         }
-        return k;
+
+        for (Integer key : counter.keySet()) {
+            nums[k++] = key;
+        }
+        return counter.keySet().size();
     }
 }
